@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 13,
+      "name": "chandruPadman",
+      "email": "chandur@2000",
+      "mob": 94484848484,
+      "fee": "2311"
+    },
+    {
+      "id": 17,
+      "name": "chandru",
+      "email": "chsnduu@ham.ocm",
+      "mob": 9488443356,
+      "fee": "23400"
+    },
+    {
+      "id": 20,
+      "name": "chandruPadman",
+      "email": "chandruPadman@234444",
+      "mob": 34343434,
+      "fee": "2342"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,30 @@
+.container{
+    border-radius: 10px;
+    
+    width: 900px;
+    background-color: rgb(130, 166, 232);
+    height: auto;
+}
+#nav{
+    border-radius: 10px;
+    margin-top: 10px;
+    padding:2px 7px 7px 295px;
+}
+.container-fluid{
+    margin-top: 100px;
+    padding:2px 0px 0px 0px  ;
+    
+}
+#exampleModal{
+    background: azure;
+    opacity: 88%;
+}
+.modal-content{
+    background-color: rgb(103, 238, 132);
+    opacity:0px;
+}
+.label{
+    font-weight: bolder;
+    font-size: x-large;
+}
+

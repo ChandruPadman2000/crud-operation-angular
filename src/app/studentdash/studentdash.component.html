@@ -1,0 +1,89 @@
+<div class="container mt-5">
+  <div class="container-fluid">
+<nav class="navbar navbar-light bg-success " id="nav">
+    
+        <h1 style="color:azure">Angular 13 Crud</h1>
+        <div class="d-flex">
+            <button type="button" (click)="clickAddStudents()" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#exampleModal">Add Student</button>
+        </div>
+   </nav>
+  </div>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">ID.no</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Fees</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of studentData">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.mob}}</td>
+            <td>{{s.fee}}</td>
+            <td>
+                <button type="button" (click)="onEdit(s)" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">EDIT</button>&nbsp;
+                <button (click)="deleteStudents(s)" class="btn btn-danger">DELETE</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formvalue">
+                <div class="form-group">
+                    <div class="mb-2">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" formControlName="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                  </div>    
+                  <div class="form-group">
+                    <div class="mb-2">
+                    <label for="exampleInputEmail1">Mobile</label>
+                    <input type="number" class="form-control" formControlName="mob" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <div class="mb-2">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email
+                  " class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="mb-2">
+                  <label for="exampleInputPassword1">Fees</label>
+                  <input type="text" class="form-control"  formControlName="fee"id="exampleInputPassword1">
+                    </div>
+                </div>
+               
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+          <button type="button" *ngIf="showAdd"  (click)="postStudentDetails()" class="btn btn-primary">Add Records</button>
+
+          <button type="button" *ngIf="showUpdate" (click)="updateStudentDetails()" class="btn btn-warning">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
